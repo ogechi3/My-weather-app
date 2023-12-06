@@ -129,39 +129,6 @@
             </p>
           </footer>
         </div>
-        <script>
-          function search(event) {
-            event.preventDefault();
-            let searchInput = document.querySelector("#search-text-input");
-
-            let h1 = document.querySelector("h1");
-            h1.innerHTML = `${searchInput.value}`;
-
-            let time = document.querySelector("#current-time");
-
-            time.innerHTML = `${day} ${hours}:${minutes}`;
-          }
-
-          let form = document.querySelector("#search-form");
-          form.addEventListener("submit", search);
-          let currentDate = new Date();
-          let currentTime = currentDate.toLocaleTimeString();
-
-          let days = [
-            "sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-          ];
-          let day = days[currentDate.getDay()];
-
-          let hours = currentDate.getHours();
-
-          let minutes = currentDate.getMinutes();
-        </script>
       </body>
     </html>
   </body>
