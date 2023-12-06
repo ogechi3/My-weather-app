@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      input {
+        padding: 10px 8px;
+        border-radius: 4px;
+        border: none;
+      }
+      h1 {
+        font-family: "Shrikhand", serif;
+      }
+      p {
+        font-weight: 300;
+      }
+      hr {
+        font-weight: 100;
+      }
+      .city {
+        width: 80%;
+        background-color: rgb(217, 217, 230);
+      }
+      .search {
+        color: #fff;
+        background-color: #885df1;
+      }
+
+      .temp {
+        color: rgb(186, 22, 22);
+        font-weight: 700;
+      }
+      .link {
+        font-weight: 700;
+      }
+      .current-temp {
+        display: flex;
+        justify-content: end;
+        font-weight: bold;
+        position: relative;
+        bottom: 80px;
+        font-size: 60px;
+      }
+      .container {
+        max-width: 80%;
+        color: #272343;
+        margin: 0 auto;
+        padding: 30px 20px;
+        line-height: 1.5;
+      }
+      .degree {
+        font-weight: 700;
+        position: relative;
+        bottom: 10px;
+        font-size: 30px;
+      }
+      .material-symbols-outlined {
+        color: rgb(216, 195, 5);
+        position: relative;
+        bottom: -25px;
+        font-size: 37px;
+      }
+    </style>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>weather app</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+        />
+      </head>
+      <body>
+        <div class="container">
+          <header>
+            <form id="search-form">
+              <input
+                type="search"
+                placeholder="Enter a city"
+                required
+                class="city"
+                autofocus="on"
+                autocomplete="off"
+                id="search-text-input"
+              />
+              <input type="submit" value="search" class="search" />
+            </form>
+          </header>
+          <hr />
+          <h1>Benin</h1>
+          <p>
+            <span id="current-time">Wednesday 15:32</span>,moderate rain
+            <br />
+            Humidity:<span class="temp">87%,</span> Wind:<span class="temp"
+              >7.2km/h</span
+            >
+          </p>
+          <div class="current-temp">
+            <span class="material-symbols-outlined" class="icon"> sunny </span
+            >28
+            <span class="degree">°C</span>
+          </div>
+          <footer>
+            <hr />
+            <p>
+              This project was coded by
+              <a href="https//:thomas jennifer" target="_blank" class="link"
+                >Thomas Jennifer</a
+              >
+              and is on
+              <a href="https//:github" target="_blank" class="link">Github</a>
+              and
+              <a href="https//:Netlify" class="link">hosted on Netlify</a>
+            </p>
+          </footer>
+        </div>
+        <script>
+          function search(event) {
+            event.preventDefault();
+            let searchInput = document.querySelector("#search-text-input");
+
+            let h1 = document.querySelector("h1");
+            h1.innerHTML = `${searchInput.value}`;
+
+            let time = document.querySelector("#current-time");
+
+            time.innerHTML = `${day} ${hours}:${minutes}`;
+          }
+
+          let form = document.querySelector("#search-form");
+          form.addEventListener("submit", search);
+          let currentDate = new Date();
+          let currentTime = currentDate.toLocaleTimeString();
+
+          let days = [
+            "sunday",
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday",
+          ];
+          let day = days[currentDate.getDay()];
+
+          let hours = currentDate.getHours();
+
+          let minutes = currentDate.getMinutes();
+        </script>
+      </body>
+    </html>
+  </body>
+</html>
