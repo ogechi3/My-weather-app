@@ -3,68 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>weather app</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-    />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>My weather application</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
+
   <body>
-    <div class="container">
+    <div class="weather-app">
       <header>
         <form id="search-form">
           <input
             type="search"
-            placeholder="Enter a city"
+            placeholder="Enter a city.."
             required
-            class="city"
-            autofocus="on"
-            autocomplete="off"
-            id="search-text-input"
+            class="search-input"
+            id="search-input"
           />
-          <input type="submit" value="search" class="search" />
+          <input type="submit" value="Search" class="search-button" />
         </form>
       </header>
-      <hr />
-      <h1>Benin</h1>
-      <p>
-        <span id="current-time">Wednesday 15:32</span>,moderate rain
-        <br />
-        Humidity:<span class="temp">87%,</span> Wind:<span class="temp"
-          >7.2km/h</span
-        >
-      </p>
-      <div class="current-temp">
-        <span class="material-symbols-outlined" class="icon"> sunny </span>28
-        <span class="degree">°C</span>
-      </div>
+      <main>
+        <div class="current-weather">
+          <div>
+            <h1 class="current-city" id="current-city">Paris</h1>
+            <p class="current-details">
+              <span id="current-date"></span>, moderate rain <br />
+              Humidity: <strong>87%</strong>, Wind: <strong>7.2km/h</strong>
+            </p>
+          </div>
+          <div class="current-temperature">
+            <span class="current-temperature-icon">☀️</span
+            ><span class="current-temperature-value" id="top-temp">24</span
+            ><span class="current-temperature-unit">°C</span>
+          </div>
+        </div>
+      </main>
       <footer>
-        <hr />
         <p>
           This project was coded by
-          <a href="https//:thomas jennifer" target="_blank" class="link"
-            >Thomas Jennifer</a
-          >
-          and is on
-          <a
-            href="https://github.com/ogechi3/My-weather-app"
-            target="_blank"
-            class="link"
-            >Github</a
-          >
-          and
-          <a
-            href="https://dashboard.render.com/web/srv-clp36m946foc73a6cm40/deploys/dep-clp36mh46foc73a6cma0?r=2023-12-07%4021%3A03%3A27%7E2023-12-07%4021%3A08%3A19"
-            class="link"
-            >hosted on Render</a
-          >
+          <a href="#" target="_blank">Thomas Jennifer</a> and is
+          <a href="#" target="_blank"> on GitHub</a> and
+          <a href="#" target="_blank">hosted on Netlify</a>
         </p>
       </footer>
     </div>

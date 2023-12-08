@@ -1,19 +1,10 @@
-function displayTemperature(response) {
-  let temperatureElement = document.querySelector("#current-temperature");
-  let temperature = Math.round(response.data.temperature.current);
-  let cityElement = document.querySelector("#current-city");
-  cityElement.innerHTML = response.data.city;
-  temperatureElement.innerHTML = temperature;
-}
-
 function search(event) {
   event.preventDefault();
   let searchInputElement = document.querySelector("#search-input");
-  let city = searchInputElement.value;
-
-  let apiKey = "b2a5adcct04b33178913oc335f405433";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-
+  let cityElement = document.querySelector("#current-city");
+  cityElement.innerHTML = searchInputElement.value;
+  let apiKey = `7fa2303eo545aaff0tfbf93c4ef484a6`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${searchInputElement.value}&key=${apiKey}`;
   axios.get(apiUrl).then(displayTemperature);
 }
 
@@ -42,6 +33,12 @@ function formatDate(date) {
 
   let formattedDay = days[day];
   return `${formattedDay} ${hours}:${minutes}`;
+}
+
+function displayTemperature(response) {
+  let temperature = Math.round(response.data.temperature.current);
+  let temperatureElement = document.querySelector("#top-temp");
+  temperatureElement.innerHTML = `${temperature}`;
 }
 
 let searchForm = document.querySelector("#search-form");
